@@ -12,7 +12,7 @@ if WARRIOR_RUN_DIR != DEFAULT_RUN_DIR:
     for dir_name in ['data', 'projects']:
         dst = os.path.join(WARRIOR_RUN_DIR, dir_name)
         src = os.path.join(DEFAULT_RUN_DIR, dir_name)
-        shutil.copytree(src, dst)
+        shutil.copytree(src, dst, dirs_exist_ok=True)
 
 try:
     with open(CONFIG_FILE, 'r') as fp:
